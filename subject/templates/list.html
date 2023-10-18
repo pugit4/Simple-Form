@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Record List</title>
+</head>
+<body>
+<h2>Record List</h2>
+<ul>    
+    {% for i in items %}           
+    <li>{{ item.name }} Topic {{ item.description }}</li>
+    <a href="{% url "uv" i.id %}" role="button">Update</a>
+    <a href="{% url "dv" i.id %}" role="button">Delete</a>
+    {% empty %}
+      <p>No records Available</p>
+    {% endfor %}  
+</ul>
+    <a href="{% url "cv" %}">Create View</a>
+</body>
+</html>
